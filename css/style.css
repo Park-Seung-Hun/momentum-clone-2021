@@ -1,0 +1,49 @@
+@import "weather_bar.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
+
+body {
+  background-color: Snow;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn {
+  cursor: pointer;
+}
+.js-clock {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: white;
+  font-size: 200px;
+  transition: color 0.5s ease-in-out;
+}
+
+.form,
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  animation: fadeIn 0.5s linear;
+}
+@keyframes fadeIn {
+  fromm {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
