@@ -9,6 +9,7 @@ let toDos = [];
 function delToDo(event){
     const btn = event.target; // 어떤 이벤트가 선택 됬는지 알려준다.
     const li = btn.parentNode; // 선택된 버튼의 부모 노드를 알려준다.
+    toDoList.removeChild(li);
 
     const cleanToDos = toDos.filter(function(toDo) {
         return toDo.id !== parseInt(li.id);
@@ -48,14 +49,11 @@ function paintToDo(text){
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
     const newId = idNumbers;
-
     idNumbers += 1;
-    delBtn.innerText = "❌"
-    span.innerText = text;
 
+    delBtn.innerText = text;
     delBtn.addEventListener("click", delToDo);
     li.appendChild(delBtn);
-    li.appendChild(span);
     li.id = newId;
 
     toDoList.appendChild(li);

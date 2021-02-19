@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 input[id="menuicon"] {
   display: none;
@@ -16,7 +17,6 @@ header > div {
   height: 80px;
   margin: 0 auto;
 }
-
 /* 각영역의 라벨(중앙정렬) */
 .area_desc {
   position: absolute;
@@ -26,63 +26,8 @@ header > div {
   font-size: 20px;
 }
 
-/* 메뉴버튼 */
-.menubtn {
-  display: block;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-.menubtn span {
-  display: block;
-  position: absolute;
-  width: 80%;
-  height: 5px;
-  border-radius: 30px;
-  background: white;
-  transition: all 0.35s;
-}
-.menubtn span:nth-child(1) {
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.menubtn span:nth-child(2) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.menubtn span:nth-child(3) {
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-/* 컨텐츠영역 */
-.container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.container .contents {
-  width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-}
-.container .sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100%;
-  background: #666;
-  z-index: 30;
-  transition: 0.35s;
-}
+
 
 /* 체크 변화값 */
 input[id="menuicon"]:checked ~ header .menubtn {

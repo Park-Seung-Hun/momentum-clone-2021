@@ -1,0 +1,73 @@
+/* 컨텐츠영역 */
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .container .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .container .sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #666;
+    z-index: 30;
+    transition: 0.35s;
+  }
+  .contents h4{
+    font-size: 60px;
+    color: white;
+  }
+
+/* 시계 */
+.js-clock{
+margin-bottom: 30px;
+}
+.js-clock h1 {
+  color: white;
+  font-size: 170px;
+  font-weight: 200;
+  opacity: 0.8;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Todo List*/
+input{
+  border: none; 
+  background: transparent;
+  width:200px;
+  height: 40px;
+  text-align: center;
+  margin: 20px 0;
+  color:white
+}
+input:focus{
+  outline: none;
+}
+input::placeholder{
+  color:white;
+  font-size:20px
+}
+li button{
+  font-size:20px;
+  background-color: transparent;
+  color: white;
+  border:0;
+  outline: 0;
+  margin-right: 10px;
+}
+.toDoList{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
