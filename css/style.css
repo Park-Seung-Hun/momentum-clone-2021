@@ -3,6 +3,8 @@
 @import "contents/content.css";
 @import "contents/menubtn.css";
 @import "contents/toDoList.css";
+@import "contents/search.css";
+@import "contents/calendar.css";
 
 /* 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');

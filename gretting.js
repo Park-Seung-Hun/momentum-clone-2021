@@ -1,13 +1,15 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
-    greeting =document.querySelector(".js-greetings");
+    greeting =document.querySelector(".js-greetings"),
+    inputForm = document.querySelector(".js-toDoForm"),
+    visibleForm = inputForm.querySelector("input");
 
 const USER_LS="currentUser",
 SHOWING_CN="showing";
+const currentUser=localStorage.getItem(USER_LS);
 
 
 function loadName(){
-    const currentUser=localStorage.getItem(USER_LS);
     if(currentUser===null){
         askForName();
     }
@@ -32,17 +34,14 @@ function askForName(){
 function paintGreeting(text){
     form.classList.remove(SHOWING_CN); // form 태그에 class 명에 Shwing-cn 제거
     greeting.classList.add(SHOWING_CN); // greeting 태그에 class 명에 Shwing-cn 추가
-    greeting.innerText=`hello ${text}`;
+    visibleForm.classList.add(SHOWING_CN);
+    greeting.innerText=`Welcome ${text}!`;
 
 }
 
 
 
-
-
-
 function init(){
     loadName();
-
 }
 init();

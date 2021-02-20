@@ -28,7 +28,7 @@ input{
   li{
     animation: listFadeIn 0.8s ease-in-out;
   }
-  button:hover{
+  li button:hover{
     animation: buttonRotate 2s infinite linear;
   }
   @keyframes listFadeIn {
