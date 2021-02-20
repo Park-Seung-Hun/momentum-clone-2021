@@ -1,7 +1,7 @@
 const weatherTemp = document.querySelector(".js-weather__temp");
 const weatherPlace = document.querySelector(".js-weather__place");
 const icon = document.querySelector(".weather__icon");
-const API_KEY ='a2046dbeadc6151d049fcab99c473914';
+const API_KEY ='5e96abfde6f856ec6235306b47811052';
 const COORDS = 'coords';
 
 

@@ -1,15 +1,17 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
-    greeting =document.querySelector(".js-greetings");
+    greeting =document.querySelector(".js-greetings"),
+    visibleForm = document.querySelector(".js-toDoForm");
 
 const USER_LS="currentUser",
 SHOWING_CN="showing";
+const currentUser=localStorage.getItem(USER_LS);
 
 
 function loadName(){
-    const currentUser=localStorage.getItem(USER_LS);
     if(currentUser===null){
         askForName();
+        visibleForm.style.visibility = "hidden";
     }
     else{
         paintGreeting(currentUser);
@@ -24,6 +26,7 @@ function handleSubmit(event){
     const currentValue = input.value; // 입력받은 text
     paintGreeting(currentValue);
     saveName(currentValue);
+    visibleForm.setAttribute(style,"visibility: visible;");
 }
 function askForName(){ 
     form.classList.add(SHOWING_CN); // form 태그에 class 명에 Shwing-cn 추가
@@ -38,11 +41,7 @@ function paintGreeting(text){
 
 
 
-
-
-
 function init(){
     loadName();
-
 }
 init();

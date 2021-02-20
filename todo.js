@@ -3,6 +3,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS='toDos';
+
 let idNumbers=1;
 let toDos = [];
 
@@ -35,6 +36,7 @@ function loadToDos(){
 function handleSubmit(event){
     event.preventDefault();
     const currentValue = toDoInput.value;
+
     paintToDo(currentValue);
     toDoInput.value=""; // input의 값을 입력 후 초기화.
 }
@@ -63,7 +65,6 @@ function paintToDo(text){
     toDos.push(toDoObj);
     saveToDos();
 }
-
 
 
 function init(){
