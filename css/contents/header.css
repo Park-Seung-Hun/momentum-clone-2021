@@ -15,7 +15,7 @@ header > div {
   position: relative;
   width: 1200px;
   height: 80px;
-  margin: 0 auto;
+  margin: 0 auto 0 50px;
 }
 /* 각영역의 라벨(중앙정렬) */
 .area_desc {

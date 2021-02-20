@@ -9,7 +9,18 @@
   <body>
     <input type="checkbox" id="menuicon" />
     <header>
-      <div>
+      <div>          
+        <form class="search">
+        <button class="img-button" type="submit" name="click" value="">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <input type="text" class="keyword" name="search" maxlength="255" value="" autocomplete="off">
+        <select name="whichSearch" class="selectSearch">
+          <option id="google" value="google">Google</option>
+          <option id="naver" value="naver">Naver</option>
+        </select>
+        </form>
         <span class="area_desc"></span>
         <label for="menuicon" class="menubtn">
           <span></span>
@@ -31,19 +42,22 @@
         </form>
         <h4 class="js-greetings greetings"></h4>
         <form class="js-toDoForm toDoForm">
-          <input type="text" placeholder="Wirte a todo" />
+          <input type="text" placeholder="Wirte a todo" class="form"/>
         </form>
 
         <ul class="js-toDoList toDoList"></ul>
       </div>
+
       <div class="sidebar">
         <div class="sidebar__weather">
           <div>
             <span class="js-weather__place"></span>
             <div class="js-weather__info">
-              <img src="" alt="" class="weather__icon">
+              <span></span>
               <span class="js-weather__temp"></span></div>
           </div>
+
+
         </div>
         <span class="area_desc">
           </span>
@@ -55,6 +69,7 @@
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="search.js"></script>
     <script src="clock.js"></script>
     <script src="gretting.js"></script>
     <script src="todo.js"></script>

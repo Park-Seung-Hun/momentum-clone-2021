@@ -1,13 +1,14 @@
 const weatherTemp = document.querySelector(".js-weather__temp");
 const weatherPlace = document.querySelector(".js-weather__place");
 const icon = document.querySelector(".weather__icon");
+const info = document.querySelector(".js-weather__info"),
+    span=info.querySelector("span");
 const API_KEY ='5e96abfde6f856ec6235306b47811052';
 const COORDS = 'coords';
-
+let varNumber=1;
 
 function saveCoords(coordsObj){
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
-
 }
 function handleGeoSucces(position){
     const latitude = position.coords.latitude;
@@ -31,11 +32,22 @@ function getWeather(lat,lon){
     ).then(function(response){
         return response.json();
     }).then(function(json){
+        let exampleIcon = {
+            '01' : 'fas fa-sun',
+            '02' : 'fas fa-cloud-sun',
+            '03' : 'fas fa-cloud',
+            '04' : 'fas fa-cloud-meatball',
+            '09' : 'fas fa-cloud-sun-rain',
+            '10' : 'fas fa-cloud-showers-heavy',
+            '11' : 'fas fa-poo-storm',
+            '13' : 'far fa-snowflake',
+            '50' : 'fas fa-smog'
+        };
         const temperature = json.main.temp;
         const place = json.name;
-        var imgURL = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
-        icon.setAttribute("src", imgURL);
+        var weatherIcon = (json.weather[0].icon).substr(0,2);
 
+        span.innerHTML = `<i class="${exampleIcon[weatherIcon]}"></i>`;
         const checkTemp = parseInt(temperature);
         if( checkTemp < -10){
             weatherTemp.innerHTML = ` <i class="fas fa-thermometer-empty"></i> ${temperature}`;
@@ -62,6 +74,9 @@ function loadCoords(){
         askForCoords();
     }
     else{
+        
+        console.log(varNumber);
+        varNumber+=1;
         const parseCoords = JSON.parse(loadedCoords);
         getWeather(parseCoords.latitude,parseCoords.longitude);
     }
@@ -69,6 +84,7 @@ function loadCoords(){
 
 function init(){
     loadCoords();
+    setInterval(loadCoords,3600000);
 }
 
 init();

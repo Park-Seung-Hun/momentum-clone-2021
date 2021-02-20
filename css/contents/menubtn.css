@@ -1,3 +1,21 @@
+/* 검색창 */
+.search{
+  position: absolute;
+  left: 0;
+}
+.keyword{
+  opacity: 0;
+  transition: 0.4s;
+
+}
+.search:hover > .keyword,
+.search:hover > select{
+  opacity: 1;
+}
+
+.selectSearch option{
+  background-color:transparent;
+}
 /* 메뉴버튼 */
 .menubtn {
     display: block;
@@ -5,7 +23,7 @@
     height: 50px;
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: -30%;
     transform: translateY(-50%);
     cursor: pointer;
   }
