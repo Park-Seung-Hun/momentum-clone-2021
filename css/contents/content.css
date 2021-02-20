@@ -22,6 +22,8 @@
     z-index: 30;
     transition: 0.35s;
 }
+
+/* 날씨 */
 .sidebar__weather{
   display: flex;
   padding-top: 50px;
@@ -32,6 +34,18 @@
 .sidebar__weather span{
    color: white;
    font-size: 40px;
+   margin-left: 20px;
+}
+.sidebar__weather .js-weather__info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather__icon{
+  -webkit-filter:  opacity(0.5) drop-shadow(0 0 0 white);
+  filter: opacity(0.5) drop-shadow(0 0 0 white);
+  width: 70px;
+  height: 70px;
 }
 .contents h4{
     font-size: 60px;
@@ -48,45 +62,5 @@ margin-bottom: 30px;
   font-weight: 200;
   transition: color 0.5s ease-in-out;
 }
-.weather__icon{
-  -webkit-filter:  opacity(0.5) drop-shadow(0 0 0 white);
-  filter: opacity(0.5) drop-shadow(0 0 0 white);
-  width: 50px;
-  height: 50px;
-}
 
-/* Todo List*/
-input{
-  border: none; 
-  background: transparent;
-  width:200px;
-  height: 40px;
-  text-align: center;
-  margin: 20px 0;
-  color:white;
-  opacity: 0.7;
-}
-input:focus{
-  outline: none;
-}
-input::placeholder{
-  font-family: 'Lobster', cursive;
-  color:white;
-  font-size:30px
-}
-li button{
-  font-family: 'Lobster', cursive;
-  font-size:20px;
-  background-color: transparent;
-  color: white;
-  border:0;
-  outline: 0;
-  margin-right: 10px;
-}
-.toDoList{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
+

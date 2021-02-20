@@ -2,21 +2,26 @@
 @import "contents/header.css";
 @import "contents/content.css";
 @import "contents/menubtn.css";
+@import "contents/toDoList.css";
 
 /* 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-html, body {
+*{
+      
   font-family: 'Lobster', cursive;
+}
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 body {
+  font-family: 'Lobster', cursive;
   background-color: Snow;
   position: relative;
+  overflow:hidden
 }
 
 .btn {
@@ -26,7 +31,6 @@ body {
 .greetings {
   display: none;
 }
-
 .showing {
   display: block;
 }

@@ -24,7 +24,7 @@ function handleGeoError(){
 }
 function askForCoords(){
     navigator.geolocation.getCurrentPosition(handleGeoSucces,handleGeoError);
-}// 위치 정보를 읽는 함수
+}
 function getWeather(lat,lon){
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
