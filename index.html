@@ -2,31 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="./css/weather-icons.min.css" />
-
+    <link rel="stylesheet" href="./css/weather-icons.min.css">
     <title>Momentum</title>
   </head>
   <body>
-    <div class=""></div>
-    <div class="js-clock">
-      <h1>00:00</h1>
+    <input type="checkbox" id="menuicon" />
+    <header>
+      <div>
+        <span class="area_desc"></span>
+        <label for="menuicon" class="menubtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="contents">
+
+        <div class="js-clock">
+          <h1>00:00</h1>
+        </div>
+
+        <form action="" class="js-form form">
+          <input type="text" placeholder="What is your name?" />
+        </form>
+        <h4 class="js-greetings greetings"></h4>
+        <form class="js-toDoForm toDoForm">
+          <input type="text" placeholder="Wirte a todo" />
+        </form>
+
+        <ul class="js-toDoList toDoList"></ul>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar__weather">
+          <div>
+            <span class="js-weather__place"></span>
+            <div>
+              <img src="" alt="" class="weather__icon">
+              <span class="js-weather__temp"></span></div>
+          </div>
+        </div>
+        <span class="area_desc">
+          </span>
+      </div>
+      
+
     </div>
-    <i class="wi wi-day-sunny"></i>
-    <form action="" class="js-form form">
-      <input type="text" placeholder="What is your name?" class=".js-input" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Writhe a todo" />
-    </form>
-    <ul class="js-toDoList"></ul>
-
-    <span class="js-weather"></span>
-
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="realweather.js"></script>
     <script src="clock.js"></script>
     <script src="gretting.js"></script>
     <script src="todo.js"></script>

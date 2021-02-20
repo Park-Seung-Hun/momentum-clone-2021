@@ -29,20 +29,14 @@
   justify-content: center;
   align-items: center;
 }
-.sidebar__weather i{
-    color: white;
-    font-size: 40px;
-    margin-bottom: 20px;
-}
 .sidebar__weather span{
    color: white;
    font-size: 40px;
 }
-
-  .contents h4{
+.contents h4{
     font-size: 60px;
     color: white;
-  }
+}
 
 /* 시계 */
 .js-clock{
@@ -53,6 +47,12 @@ margin-bottom: 30px;
   font-size: 170px;
   font-weight: 200;
   transition: color 0.5s ease-in-out;
+}
+.weather__icon{
+  -webkit-filter:  opacity(0.5) drop-shadow(0 0 0 white);
+  filter: opacity(0.5) drop-shadow(0 0 0 white);
+  width: 50px;
+  height: 50px;
 }
 
 /* Todo List*/

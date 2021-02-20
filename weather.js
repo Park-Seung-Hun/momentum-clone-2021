@@ -1,4 +1,6 @@
-const weather = document.querySelector(".js-weather");
+const weatherTemp = document.querySelector(".js-weather__temp");
+const weatherPlace = document.querySelector(".js-weather__place");
+const icon = document.querySelector(".weather__icon");
 const API_KEY ='a2046dbeadc6151d049fcab99c473914';
 const COORDS = 'coords';
 
@@ -30,8 +32,28 @@ function getWeather(lat,lon){
         return response.json();
     }).then(function(json){
         const temperature = json.main.temp;
-        const place =json.name;
-        weather.innerText = `${temperature} @ ${place}`;
+        const place = json.name;
+        var imgURL = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
+        icon.setAttribute("src", imgURL);
+
+        const checkTemp = parseInt(temperature);
+        if( checkTemp < -10){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-empty"></i> ${temperature}`;
+        }
+        else if (checkTemp >= -10 && checkTemp < 0){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-quarter"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 0 && checkTemp < 10){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-half"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 10 && checkTemp < 20){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-quarters"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 20){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-full"></i> ${temperature}`;
+        }
+        
+        weatherPlace.innerText=` ${place}`;
     });
 }
 function loadCoords(){
