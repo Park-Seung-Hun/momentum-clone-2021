@@ -1,0 +1,70 @@
+/* Todo List*/
+input{
+    border: none; 
+    background: transparent;
+    width:500px;
+    height: 40px;
+    text-align: center;
+    margin: 20px 0;
+    color:white;
+    opacity: 0.7;
+    font-size:30px;
+  }
+  input:focus{
+    outline: none;
+  }
+  input::placeholder{
+    color:white;
+    font-size:30px;
+  }
+  button{
+    font-size:20px;
+    background-color: transparent;
+    color: white;
+    border:0;
+    outline: 0;
+    margin-right: 10px;
+  }
+  li{
+    animation: listFadeIn 0.8s ease-in-out;
+  }
+  button:hover{
+    animation: buttonRotate 2s infinite linear;
+  }
+  @keyframes listFadeIn {
+      0%{
+        opacity:0 ;
+      }
+      25%{
+        opacity:0.25 ;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      75%{
+        opacity:0.75 ;
+      }
+      100%{
+        opacity:1 ;
+      }
+  }
+  /* 떨림 효과 */
+  @keyframes buttonRotate{
+    0%, 50%{
+      transform: rotate(0deg);
+      }
+    5%, 15%, 25%, 35%, 45% {
+      transform: rotate(13deg);
+    }
+    10%, 20%, 30%, 40% {
+      transform: rotate(-13deg);
+    }
+  }
+  
+  .toDoList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
