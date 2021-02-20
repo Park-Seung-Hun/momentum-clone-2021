@@ -32,10 +32,27 @@ function getWeather(lat,lon){
         return response.json();
     }).then(function(json){
         const temperature = json.main.temp;
-        const place =json.name;
+        const place = json.name;
         var imgURL = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
         icon.setAttribute("src", imgURL);
-        weatherTemp.innerHTML = ` <i class="fas fa-thermometer-half"></i> ${temperature}`;
+
+        const checkTemp = parseInt(temperature);
+        if( checkTemp < -10){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-empty"></i> ${temperature}`;
+        }
+        else if (checkTemp >= -10 && checkTemp < 0){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-quarter"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 0 && checkTemp < 10){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-half"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 10 && checkTemp < 20){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-quarters"></i> ${temperature}`;
+        }
+        else if(checkTemp >= 20){
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-full"></i> ${temperature}`;
+        }
+        
         weatherPlace.innerText=` ${place}`;
     });
 }
