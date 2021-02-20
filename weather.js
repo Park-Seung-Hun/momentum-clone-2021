@@ -1,4 +1,6 @@
-const weather = document.querySelector(".js-weather");
+const weatherTemp = document.querySelector(".js-weather__temp");
+const weatherPlace = document.querySelector(".js-weather__place");
+const icon = document.querySelector(".weather__icon");
 const API_KEY ='a2046dbeadc6151d049fcab99c473914';
 const COORDS = 'coords';
 
@@ -31,7 +33,10 @@ function getWeather(lat,lon){
     }).then(function(json){
         const temperature = json.main.temp;
         const place =json.name;
-        weather.innerText = `${temperature} @ ${place}`;
+        var imgURL = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
+        icon.setAttribute("src", imgURL);
+        weatherTemp.innerHTML = ` <i class="fas fa-thermometer-half"></i> ${temperature}`;
+        weatherPlace.innerText=` ${place}`;
     });
 }
 function loadCoords(){
