@@ -48,10 +48,7 @@ const prevDates =[],
     if (viewMonth === today.getMonth() && viewYear === today.getFullYear()){
         
         var check = document.querySelectorAll(".this");
-        
-        console.log(check);
         for(var i=0; i<check.length;i++){
-            console.log(check[i].innerText);
             if (+check[i].innerText === today.getDate()) {
                 check[i].classList.add("today");
                 break;

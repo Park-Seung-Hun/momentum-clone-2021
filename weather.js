@@ -50,19 +50,19 @@ function getWeather(lat,lon){
         span.innerHTML = `<i class="${exampleIcon[weatherIcon]}"></i>`;
         const checkTemp = parseInt(temperature);
         if( checkTemp < -10){
-            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-empty"></i> ${temperature}`;
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-empty" style="color: rgba(0,0,255,0.7);"></i> ${temperature}`;
         }
         else if (checkTemp >= -10 && checkTemp < 0){
-            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-quarter"></i> ${temperature}`;
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-quarter" style="color: rgba(0,0,255,0.3);"></i> ${temperature}`;
         }
         else if(checkTemp >= 0 && checkTemp < 10){
             weatherTemp.innerHTML = ` <i class="fas fa-thermometer-half"></i> ${temperature}`;
         }
         else if(checkTemp >= 10 && checkTemp < 20){
-            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-quarters"></i> ${temperature}`;
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-quarters" style="color: rgba(255,0,0,0.3);"></i> ${temperature}`;
         }
         else if(checkTemp >= 20){
-            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-full"></i> ${temperature}`;
+            weatherTemp.innerHTML = ` <i class="fas fa-thermometer-three-full" style="color: rgba(255,0,0,0.7);"></i> ${temperature}`;
         }
         
         weatherPlace.innerText=` ${place}`;
