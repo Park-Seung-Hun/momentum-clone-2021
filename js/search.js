@@ -18,10 +18,10 @@ searching.Engine = function(){
         let keyword = this.keyword.value;
 
         if(engine === "google"){
-            newWindow.location.href = "https://www.google.co.kr/search?q=" + keyword;
+            newWindow.location.href = `https://www.google.co.kr/search?q=` + keyword;
         }
-        else if(engine === " naver"){
-            newWindow.location.href = "https://search.naver.com/search.naver?query=" + keyword;
+        else if(engine === "naver"){
+            newWindow.location.href = `https://search.naver.com/search.naver?query=` + keyword;
         }
     });
 }
