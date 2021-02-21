@@ -7,11 +7,11 @@ const TODOS_LS='toDos';
 let idNumbers=1;
 let toDos = [];
 
+
 function delToDo(event){
     const btn = event.target; // 어떤 이벤트가 선택 됬는지 알려준다.
     const li = btn.parentNode; // 선택된 버튼의 부모 노드를 알려준다.
     toDoList.removeChild(li);
-
     const cleanToDos = toDos.filter(function(toDo) {
         return toDo.id !== parseInt(li.id);
       });
@@ -36,7 +36,6 @@ function loadToDos(){
 function handleSubmit(event){
     event.preventDefault();
     const currentValue = toDoInput.value;
-
     paintToDo(currentValue);
     toDoInput.value=""; // input의 값을 입력 후 초기화.
 }
@@ -64,6 +63,7 @@ function paintToDo(text){
     };
     toDos.push(toDoObj);
     saveToDos();
+    
 }
 
 
