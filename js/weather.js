@@ -81,10 +81,19 @@ function loadCoords(){
         getWeather(parseCoords.latitude,parseCoords.longitude);
     }
 }
-
+function refTime(){
+    const refDate=new Date(),
+      refMin=refDate.getMinutes(),
+      refSec=refDate.getSeconds();
+      if(refMin === 0 && refSec==0){
+          loadCoords();
+          console.log("complete");
+      }
+}
 function init(){
     loadCoords();
-    setInterval(loadCoords,3600000);
+    setInterval(refTime,1000);
+
 }
 
 init();
