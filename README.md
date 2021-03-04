@@ -99,11 +99,60 @@
   
 #### `Sidebar`
 1. 날씨
-2. 달력
+```html
+<div class="sidebar__weather">
+ <div>
+  <span class="js-weather__place"></span>
+  <div class="js-weather__info">
+  <span></span>
+  <span class="js-weather__temp"></span></div>
+ </div>
+</div>
+```
 
+ - OpenWeatherMap에서 제공하는 오픈 API를 이용해 내 위치에서의 날씨 정보를 나타내는 기능 구현 [날씨 코드 보러가기](https://github.com/Park-Seung-Hun/momentum_clone-2021/blob/main/js/weather.js)
+   1. 날씨에 맞는 Icon 출력
+   2. 기온에 맞는 온도계 색깔 변화 (0도를 기준으로 영하: 파란색, 영상: 빨간색)
+
+2. 달력
+```html
+<div class="calendar">
+ <div class="calendar__header">
+   <div class="calendar__year-month"></div>
+     <div class="calendar__nav">
+       <button class="calendar__nav-btn " onclick="prevMonth()">&lt;</button>
+       <button class="calendar__nav-btn " onclick="goToday()">Today</button>
+       <button class="calendar__nav-btn " onclick="nextMonth()">&gt;</button>
+     </div>
+ </div>
+ <div class="calendar__main">
+   <div class="calendar__days">
+     <div class="calendar__day">일</div>
+      <div class="calendar__day">월</div>
+      <div class="calendar__day">화</div>
+      <div class="calendar__day">수</div>
+      <div class="calendar__day">목</div>
+      <div class="calendar__day">금</div>
+      <div class="calendar__day">토</div>
+   </div>
+   <div class="calendar__dates">
+   </div>
+ </div>
+</div>
+```
+ - JS와 CSS를 이용해 Calendar를 구현 (Date 객체를 이용해 현재 날짜를 받아와 표시)<br>
+   [JS 코드 보러가기](https://github.com/Park-Seung-Hun/momentum_clone-2021/blob/main/js/calendar.js)<br>
+   [CSS 코드 보러가기](https://github.com/Park-Seung-Hun/momentum_clone-2021/blob/main/css/contents/calendar.css)
+
+#### `Background`
+ - JS의 Math.random() 함수를 이용해 미리 저장된 배경을 랜덤하게 나타나게 하는 기능 
+ [코드 보러가기](https://github.com/Park-Seung-Hun/momentum_clone-2021/blob/main/js/bg.js) 
+ 
 ### 📘 추가할 기능
 
 
 ### 📙 출처
 [노마드 코더](https://nomadcoders.co/)<br>
+
+
 
